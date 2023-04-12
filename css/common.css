@@ -1,0 +1,22 @@
+/* Disables stop/start/restart */
+.card-actions > button[class*="alert-theme"] {
+    display: none!important;
+}
+
+div[class*="card-header-actions"] > button[class*="alert-theme"] {
+    display: none!important;
+}
+
+/* Disables live console */
+.v-slide-group__content > :nth-child(4) {
+    display: none!important;
+}
+
+/* Disables cosmetics & danger zone */
+.d-flex > :nth-child(9) {
+    display: none!important;
+}
+
+.d-flex > :nth-child(10) {
+    display: none!important;
+}
