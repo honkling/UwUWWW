@@ -59,10 +59,16 @@ function recurse(node) {
     if (!changedNodes.includes(node) &&
         node !== document.body &&
         node.nodeValue !== null &&
-        node.nodeValue.trim() !== ""
+        node.nodeValue.trim() !== "" &&
+        node.tagName !== "SCRIPT" &&
+        node.tagName !== "STYLE" &&
+        node.parentNode.tagName !== "SCRIPT" &&
+        node.parentNode.tagName !== "STYLE" &&
+        !(node.parentNode.tagName === "SPAN" &&
+        node.parentNode.dataset &&
+        node.parentNode.dataset.slateString)
     ) {
         node.nodeValue = uwuify(node.nodeValue);
-        console.log(node.nodeValue);
         changedNodes.push(node);
     }
 
